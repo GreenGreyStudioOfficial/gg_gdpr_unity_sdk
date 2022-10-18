@@ -1,0 +1,19 @@
+{
+  "name": "com.greengreysoftworks.gdpr",
+  "displayName": "Green Grey GDPR Unity module",
+  "version": "1.0.0",
+  "unity": "2020.3",
+  "description": "Green Grey GDPR Unity module",
+  "type": "library",
+  "dependencies": {
+	"com.unity.nuget.newtonsoft-json": "3.0.2",
+	"com.greengreysoftworks.dmpanalytics": "1.3.2"
+  },
+  "samples": [
+    {
+      "displayName": "Init GDPR with test requests",
+      "description": "Contains sample scene for Init GDPR with test requests (work only in Editor)",
+      "path": "Samples~/InitGdprServiceAndTestRequests"
+    }
+  ]
+}
