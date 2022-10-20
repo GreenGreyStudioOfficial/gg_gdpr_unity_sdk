@@ -1,0 +1,18 @@
+{
+    "name": "Greengrey.GDPR.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:ced46b82a0a07414f9f1ada141037e1f"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

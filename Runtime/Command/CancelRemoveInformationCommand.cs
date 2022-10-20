@@ -5,5 +5,7 @@
         public override string method => "cancel";
         
         public override string ToString() => "Cancel remove GDPR information";
+
+        internal override GGGdprResponseType GetResponseType() => GetDefaultResponseType();
     }
 }

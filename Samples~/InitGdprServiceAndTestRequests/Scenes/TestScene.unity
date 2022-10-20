@@ -2299,6 +2299,7 @@ MonoBehaviour:
   m_serviceUrl: https://gdpr.ggsinternal.space
   m_requestTimeout: 5000
   m_requestAttempts: 4
+  m_withLogs: 1
 --- !u!114 &1995171608
 MonoBehaviour:
   m_ObjectHideFlags: 0

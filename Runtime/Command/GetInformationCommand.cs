@@ -12,6 +12,12 @@ namespace GreenGrey.GDPR.Command
         }
 
         public override string ToString() => "Get GDPR information";
+        
+        internal override GGGdprResponseType GetResponseType()
+        {
+            return statusCode == 400 ? GGGdprResponseType.UNKNOWN_PLATFORM : GetDefaultResponseType();
+        }
+
         internal override bool IsValid()
         {
             var email = requestParams["email"].ToString();

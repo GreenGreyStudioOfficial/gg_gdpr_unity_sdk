@@ -12,6 +12,28 @@ namespace GreenGrey.GDPR.Command
         public Dictionary<string, object> requestParams { get; } = new Dictionary<string, object>();
 
         public abstract override string ToString();
+        internal abstract GGGdprResponseType GetResponseType();
         internal virtual bool IsValid() => true;
+
+        protected GGGdprResponseType GetDefaultResponseType()
+        {
+            switch (statusCode)
+            {
+                case 202:
+                    return GGGdprResponseType.SUCCESS;
+                case 401:
+                    return GGGdprResponseType.META_SERVER_AUTH_ERROR;
+                case 402:
+                    return GGGdprResponseType.REQUEST_VALIDATION_ERROR;
+            }
+            
+            if (statusCode > 200 && statusCode <= 299)
+                return GGGdprResponseType.SUCCESS;
+
+            if (statusCode >= 400 && statusCode <= 599)
+                return GGGdprResponseType.EROR;
+
+            return GGGdprResponseType.UNKNOWN_RESPONSE_TYPE;
+        }
     }
 }

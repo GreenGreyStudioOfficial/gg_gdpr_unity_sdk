@@ -3,7 +3,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace GreenGray.GDPR
+namespace GreenGrey.GDPR
 {
     public class GGGdprInit
     {

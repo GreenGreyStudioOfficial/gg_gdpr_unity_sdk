@@ -31,10 +31,10 @@ namespace GreenGrey.GDPR
             {
                 _gdprCommand.errorMessage = "Not valid query";
                 _gdprCommand.success = false;
-                _gdprCommand.statusCode = 400;
+                _gdprCommand.statusCode = 402;
 
                 m_logger.Error($"{_gdprCommand} request is not valid.");
-                return GGGdprResponseType.CANCEL;
+                return _gdprCommand.GetResponseType();
             }
             
             FillGlobalParameters(_gdprCommand.requestParams);
@@ -54,14 +54,14 @@ namespace GreenGrey.GDPR
                 _gdprCommand.success = true;
                 
                 m_logger.Log($"{_gdprCommand} request success. Code: {_gdprCommand.statusCode}");
-                return GGGdprResponseType.SUCCESS;
+                return _gdprCommand.GetResponseType();
             }
             
             _gdprCommand.errorMessage = requestResponse.error;
             _gdprCommand.success = false;
             
             m_logger.Error($"{_gdprCommand} request failed. Code: {_gdprCommand.statusCode}\nError message: {_gdprCommand.errorMessage}");
-            return GGGdprResponseType.EROR;
+            return _gdprCommand.GetResponseType();
         }
 
         private void FillGlobalParameters(Dictionary<string, object> _parameters)
